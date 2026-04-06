@@ -52,15 +52,51 @@ User: [текст поста]
 - Score 5-6: только если есть реальная ценность
 - Score < 5: **скипаем** (failMode: 'skip')
 
-### 4. Публикация
+### 4. LLM-as-a-Judge (двойная оценка)
+
+После самооценки — отправить коммент на оценку второй моделью/промптом:
+```
+Judge prompt:
+- Оцени этот коммент для ТГ-канала детского лагеря
+- Проверь: естественность, ценность, тон, факты
+- Коммент не должен выглядеть как бот
+- Ответь: PASS (оценка 7+) или FAIL (почему)
+
+User: Пост: [текст] / Коммент: [текст]
+```
+
+Режимы судьи:
+- **Score ≥ 7 + PASS** → публикуем
+- **Score ≥ 7 + FAIL** → переработка (макс 1 раз)
+- **Score < 7** → скип
+
+### 5. Thread ID маппинг
+
+> ❗ Критически важно! Без message_thread_id коммент уйдёт в общее обсуждение, а не в тред поста.
+
+Когда новый пост появляется в канале, Telegram создаёт тред в discussion-группе.
+Нужно получить `message_thread_id` этого треда и использовать при отправке.
+
+### 6. Публикация
 ```
 POST https://api.telegram.org/bot{TOKEN}/sendMessage
 {
   "chat_id": DISCUSSION_GROUP_ID,
   "text": "сгенерированный коммент",
+  "message_thread_id": POST_THREAD_ID,
   "reply_to_message_id": POST_MESSAGE_ID
 }
 ```
+
+> ⚠️ **Оба параметра обязательны!**
+> - `message_thread_id` — чтобы попасть в нужный тред
+> - `reply_to_message_id` — чтобы визуально привязаться к посту
+
+### 7. Rate Limiting
+- **Максимум:** 2 коммента в день
+- **Задержка:** 30-60 секунд после генерации перед публикацией (человеческий ритм)
+- **Тихие часы:** не постить 23:00-08:00 MSK
+- **Shadowban protection:** не более 30 действий в час
 
 ### 5. Логирование
 - Записать в memory/YYYY-MM-DD.md: время, пост, коммент, score
@@ -87,9 +123,21 @@ POST https://api.telegram.org/bot{TOKEN}/sendMessage
 | failMode | skip |
 | Частота | по новым постам |
 
+## Feedback Loop
+
+После публикации:
+1. Записать в `memory/scoring-log.md`: дата, пост, коммент, score
+2. Через 24 часа: проверить реакции и ответы
+3. Обновить scoring-log с реальным engagement
+4. Если 3 коммента подряд с 0 реакциями → корректировать промпт/стиль
+5. Если негатив → добавить в `memory/mistakes.md` и `personality/anti_patterns.md`
+
 ## Файлы
 
 - Тон: `personality/tone_of_voice.md`
+- Стиль: `personality/style_blueprint.md`
 - Факты: `personality/camp_facts.md`
 - Антипаттерны: `personality/anti_patterns.md`
 - Логи: `memory/YYYY-MM-DD.md`
+- Ошибки: `memory/mistakes.md`
+- Scoring: `memory/scoring-log.md`
