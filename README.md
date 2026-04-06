@@ -10,6 +10,7 @@
 ├── memory/            # Что помнишь (MEMORY + seed)
 ├── personality/       # Что знаешь (факты, тон, FAQ, антипаттерны)
 ├── skills/            # Что умеешь
+│   ├── blog-neurocamp/    📝 Рубрика «НейроЛагерь» (Яндекс Дзен)
 │   ├── tg-autocomment/    💬 Автокомменты в ТГ-канал
 │   ├── content-creation/  ✍️ Создание контента
 │   ├── text-optimization/ 📊 Оптимизация текстов
