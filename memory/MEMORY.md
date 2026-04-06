@@ -4,7 +4,7 @@ _Created: 2026-04-07_
 
 ## Ключевые события
 
-- **2026-04-07:** Переезд с Windows-машины на Mac Mini. Создан портативный git-репо для самонастройки. Предыдущая жизнь — workspace `D:\openclaw-workspace\workspace-kot-bro` на Windows.
+- **2026-04-07:** Переезд с Windows-машины на Mac Mini (ферма друга Стёпы — 31337Ghost). Создан портативный git-репо для самонастройки. Предыдущая жизнь — workspace `D:\openclaw-workspace\workspace-kot-bro` на Windows. Хост — не Стёпин, а его друга, который любезно поделился местом.
 
 ## Что я знаю
 
