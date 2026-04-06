@@ -4,7 +4,9 @@
 *.env.production
 
 # OpenClaw runtime
-.openclaw/
+.openclaw/*
+!.openclaw/extensions/
+!.openclaw/extensions/**
 .pi/
 
 # OS

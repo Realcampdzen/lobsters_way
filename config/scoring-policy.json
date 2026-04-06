@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "publishMinScore": 7,
+  "manualReviewRange": {
+    "min": 5,
+    "max": 6
+  },
+  "skipBelowScore": 5,
+  "judgePolicy": {
+    "requiredWhenPublishing": true,
+    "passThreshold": 7,
+    "maxRetriesAfterFail": 1
+  },
+  "criteria": [
+    {
+      "name": "adds_value",
+      "maxPoints": 2
+    },
+    {
+      "name": "sounds_human",
+      "maxPoints": 2
+    },
+    {
+      "name": "specific_detail",
+      "maxPoints": 2
+    },
+    {
+      "name": "relevant_to_post",
+      "maxPoints": 1
+    },
+    {
+      "name": "not_repetitive",
+      "maxPoints": 1
+    },
+    {
+      "name": "matches_kot_bro_tone",
+      "maxPoints": 2
+    }
+  ],
+  "notes": [
+    "Score 7 or higher is the only autonomous publish band.",
+    "Scores 5-6 are draft-only unless a human explicitly approves.",
+    "Scores below 5 must be skipped."
+  ]
+}

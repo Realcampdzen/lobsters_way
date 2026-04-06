@@ -45,9 +45,11 @@
 
 ## Принцип scoring
 
+Source of truth: `config/scoring-policy.json`
+
 Перед публикацией комментария — оценка:
 - **Score ≥ 7:** публикуем
-- **Score 5-6:** только если есть конкретная ценность (факт, наблюдение)
+- **Score 5-6:** только manual review
 - **Score < 5:** скипаем (failMode: 'skip')
 
 Критерии score:

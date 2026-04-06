@@ -1,0 +1,10 @@
+{
+  "id": "kot-bro-release",
+  "name": "Kot Bro Release Control",
+  "description": "Deterministic self-rebuild, release status, and rollback commands for Kot Bro.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}

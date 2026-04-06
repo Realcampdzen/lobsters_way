@@ -46,7 +46,9 @@ metadata: {"openclaw":{"emoji":"📊","requires":{"bins":["python3"]},"os":["dar
 
 Скрипт `analyze_metrics.py` в этой папке:
 ```bash
-python3 skills/text-optimization/analyze_metrics.py < текст.txt
+python3 skills/text-optimization/analyze_metrics.py path/to/text.md
+cat text.md | python3 skills/text-optimization/analyze_metrics.py
+python3 skills/text-optimization/analyze_metrics.py --json < text.md
 ```
 
 ### Что он показывает:
@@ -56,7 +58,7 @@ python3 skills/text-optimization/analyze_metrics.py < текст.txt
 - Лексическое разнообразие (TTR)
 - Повторы n-грамм
 - Процент пассивного залога
-- Рекомендации
+- Текстовый verdict или JSON для автоматизации
 
 ## Компромиссы
 

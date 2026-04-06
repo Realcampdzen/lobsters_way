@@ -1,0 +1,42 @@
+{
+  "agents": {
+    "list": [
+      {
+        "id": "kot-bro",
+        "name": "Kot Bro",
+        "workspace": "__OPENCLAW_HOME__/current",
+        "instructions": "Read AGENTS.md and follow the workspace rules."
+      }
+    ]
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "plugins": {
+    "enabled": true,
+    "allow": [
+      "kot-bro-release"
+    ],
+    "entries": {
+      "kot-bro-release": {
+        "enabled": true,
+        "config": {}
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "accounts": {
+        "default": {
+          "token": "__TELEGRAM_BOT_TOKEN__",
+          "allowFrom": [
+            "__STEPA_TELEGRAM_USER_ID__"
+          ]
+        }
+      }
+    }
+  }
+}

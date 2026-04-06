@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "repoUrl": "https://github.com/Realcampdzen/lobsters_way.git",
+  "defaultRef": "main",
+  "restartMode": "gateway",
+  "requiredPaths": [
+    "identity/SOUL.md",
+    "identity/IDENTITY.md",
+    "identity/USER.md",
+    "config/AGENTS.md",
+    "config/HEARTBEAT.md",
+    "config/TOOLS.md",
+    "config/admin-allowlist.example.json",
+    "config/env.example",
+    "config/openclaw.template.json",
+    "config/scoring-policy.json",
+    "memory/MEMORY.md",
+    "memory/seed/2026-04-07-init.md",
+    "personality/style_blueprint.md",
+    "skills/tg-autocomment/SKILL.md",
+    "skills/text-optimization/analyze_metrics.py",
+    ".openclaw/extensions/kot-bro-release/index.ts",
+    ".openclaw/extensions/kot-bro-release/openclaw.plugin.json",
+    "runtime/release/cli.mjs",
+    "runtime/release/lib.mjs"
+  ],
+  "requiredEnv": [
+    "OPENCLAW_HOME",
+    "OPENAI_API_KEY",
+    "TELEGRAM_BOT_TOKEN",
+    "TELEGRAM_CHANNEL_ID",
+    "TELEGRAM_DISCUSSION_GROUP_ID",
+    "OPENCLAW_RELEASE_ADMIN_IDS"
+  ],
+  "repoOwnedPaths": [
+    ".openclaw",
+    "identity",
+    "config",
+    "personality",
+    "skills",
+    "workflows",
+    "runtime",
+    "lobster.manifest.json"
+  ],
+  "sharedOverlayPaths": [
+    ".env",
+    "USER.md",
+    "HEARTBEAT.md",
+    "TOOLS.md",
+    "MEMORY.md",
+    "memory",
+    "config/admin-allowlist.json",
+    "runtime/state",
+    "runtime/logs"
+  ],
+  "workspaceFiles": [
+    {
+      "source": "identity/SOUL.md",
+      "target": "SOUL.md",
+      "mode": "repo"
+    },
+    {
+      "source": "identity/IDENTITY.md",
+      "target": "IDENTITY.md",
+      "mode": "repo"
+    },
+    {
+      "source": "config/AGENTS.md",
+      "target": "AGENTS.md",
+      "mode": "repo"
+    },
+    {
+      "source": "identity/USER.md",
+      "target": "USER.md",
+      "mode": "shared-seed"
+    },
+    {
+      "source": "config/HEARTBEAT.md",
+      "target": "HEARTBEAT.md",
+      "mode": "shared-seed"
+    },
+    {
+      "source": "config/TOOLS.md",
+      "target": "TOOLS.md",
+      "mode": "shared-seed"
+    },
+    {
+      "source": "memory/MEMORY.md",
+      "target": "MEMORY.md",
+      "mode": "shared-seed"
+    }
+  ],
+  "sharedSeeds": [
+    {
+      "source": "memory/seed",
+      "target": "memory/seed",
+      "sync": "mirror"
+    },
+    {
+      "source": "memory/heartbeat-state.json",
+      "target": "memory/heartbeat-state.json",
+      "sync": "seed-if-missing"
+    },
+    {
+      "source": "memory/mistakes.md",
+      "target": "memory/mistakes.md",
+      "sync": "seed-if-missing"
+    },
+    {
+      "source": "memory/scoring-log.md",
+      "target": "memory/scoring-log.md",
+      "sync": "seed-if-missing"
+    }
+  ],
+  "validationCommands": [
+    {
+      "id": "validate-local",
+      "argv": [
+        "node",
+        "runtime/release/cli.mjs",
+        "validate-local",
+        "--source",
+        "."
+      ]
+    },
+    {
+      "id": "analyzer-help",
+      "argv": [
+        "python3",
+        "skills/text-optimization/analyze_metrics.py",
+        "--help"
+      ]
+    }
+  ],
+  "scoringPolicyRef": "config/scoring-policy.json"
+}

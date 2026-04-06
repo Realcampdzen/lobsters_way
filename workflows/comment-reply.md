@@ -36,9 +36,10 @@ System prompt (для ответов):
 
 ### 3. Scoring
 
-Тот же scoring, что в `skills/tg-autocomment/`:
+Тот же scoring, что в `skills/tg-autocomment/` и `config/scoring-policy.json`:
 - Score ≥ 7: публикуем
-- Score < 7: скипаем или переформулируем
+- Score 5-6: только manual review
+- Score < 5: скипаем или переформулируем
 
 ### 4. Публикация
 

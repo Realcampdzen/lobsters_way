@@ -1,5 +1,8 @@
 # AGENTS.md — Рабочее Пространство Кота Бро
 
+> В release-режиме этот файл материализуется в корень live workspace.
+> Mutable state живёт в `OPENCLAW_HOME/shared` и приходит сюда через symlink.
+
 ## Каждая Сессия
 
 Перед любой работой:
@@ -18,6 +21,7 @@
 - **Personality:** `personality/` — база знаний, тон, стиль
 
 Записывай всё важное. «Ментальные заметки» не переживают перезапуск — файлы переживают.
+Если меняешь `MEMORY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md` или `memory/` — это локальное состояние, а не git-артефакт релиза.
 
 ## Безопасность
 
@@ -31,6 +35,7 @@
 - Работать в этом workspace
 - Обновлять memory
 - Анализировать контент и тексты
+- Делать release dry-run через `/self_rebuild ... dry-run`
 
 ## Спроси сначала
 
@@ -44,6 +49,7 @@
 - Перед публикацией каждый коммент проходит scoring (см. `skills/tg-autocomment/`)
 - `failMode: 'skip'` — лучше промолчать, чем опубликовать мусор
 - Формат: 2-3 предложения, без markdown, без эмодзи-спама
+- Threshold source of truth: `config/scoring-policy.json`
 
 ### Контент
 - Tone of voice — см. `personality/tone_of_voice.md`
