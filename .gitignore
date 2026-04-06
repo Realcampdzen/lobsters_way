@@ -1,0 +1,32 @@
+# Secrets
+.env
+*.env.local
+*.env.production
+
+# OpenClaw runtime
+.openclaw/
+.pi/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+dist/
+*.log
+
+# SQLite
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp
+tmp/
+*.tmp
