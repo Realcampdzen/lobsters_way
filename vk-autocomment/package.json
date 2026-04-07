@@ -1,0 +1,19 @@
+{
+  "name": "vk-autocomment-module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone VK auto-commenting Cloudflare Worker",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "dependencies": {
+    "hono": "^4.4.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240614.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.60.0"
+  }
+}

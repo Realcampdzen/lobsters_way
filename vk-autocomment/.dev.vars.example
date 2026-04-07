@@ -1,0 +1,15 @@
+# Секреты для локальной разработки (wrangler dev)
+# Скопируй в .dev.vars и заполни значениями
+
+OPENAI_API_KEY=sk-...
+VK_GROUP_ID=123456789
+VK_SECRET=your_callback_api_secret
+VK_CONFIRMATION_CODE=abc123def
+VK_ACCESS_TOKEN=vk1.a.xxxxx
+
+# Опционально: OpenAI через прокси
+# OPENAI_PROXY_BASE_URL=https://your-proxy.example.com
+# OPENAI_PROXY_TOKEN=proxy-token-here
+
+# Kill-switch: поставь 1 чтобы выключить автокомменты
+# NV_DISABLE_VK=0

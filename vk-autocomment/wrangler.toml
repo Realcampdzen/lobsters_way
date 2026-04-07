@@ -1,0 +1,20 @@
+name = "vk-autocomment"
+main = "src/index.ts"
+compatibility_date = "2024-06-14"
+
+# ⚠️  Создай KV namespace и вставь ID:
+#     npx wrangler kv namespace create VK_AUTOCOMMENT_KV
+[[kv_namespaces]]
+binding = "VK_AUTOCOMMENT_KV"
+id = "ВСТАВЬ_СЮДА_ID_ОТ_WRANGLER"
+
+# Секреты задаются через:
+#   npx wrangler secret put OPENAI_API_KEY
+#   npx wrangler secret put VK_GROUP_ID
+#   npx wrangler secret put VK_SECRET
+#   npx wrangler secret put VK_CONFIRMATION_CODE
+#   npx wrangler secret put VK_ACCESS_TOKEN
+#
+# Опционально:
+#   npx wrangler secret put OPENAI_PROXY_BASE_URL
+#   npx wrangler secret put OPENAI_PROXY_TOKEN
